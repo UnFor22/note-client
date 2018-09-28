@@ -11,7 +11,7 @@
                 <el-button type="primary" class="_el-btn" @click="handleLogin">登录</el-button>
             </div>
             <div class="item">
-                <el-button class="_el-btn" @click="$router.push('/region')">注册</el-button>
+                <el-button class="_el-btn" @click="$router.push('/register')">注册</el-button>
             </div>
         </div>
         <div class="user-box" v-else>
@@ -47,20 +47,20 @@
             }
         },
         methods: {
-            // handleLogin (){
-            //     let params = {
-            //         email : this.email,
-            //         password: this.password
-            //     }
-            //     console.log(process.env.NODE_ENV);
-            //     let basePath = process.env.NODE_ENV == 'development' ? '/api' : ''
+            handleLogin (){
+                let params = {
+                    email : this.email,
+                    password: this.password
+                }
+                console.log(process.env.NODE_ENV);
+                let basePath = process.env.NODE_ENV == 'development' ? '/api' : ''
 
-            //     this.$axios.post('/login', params).then(res => {
-            //         if(res.data.code == 200){
-            //             this.usermsg = res.data.data
-            //         }
-            //     })
-            // }
+                this.$axios.post('/login', params).then(res => {
+                    if(res.data.code == 200){
+                        this.usermsg = res.data.data
+                    }
+                })
+            }
         }
     }
 </script>

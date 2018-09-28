@@ -23,14 +23,14 @@
         },
         data() {
             return {
-                articleList: []
+                articleData: []
             }
         },
         methods: {
-
+            
         },
         mounted () {
-            this.getArticle();
+            // this.getArticle();
         }
 
     }
